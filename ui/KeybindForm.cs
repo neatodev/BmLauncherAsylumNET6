@@ -175,7 +175,10 @@ namespace BmLauncherAsylumNET6.ui
             {
                 bt.ForeColor = Color.Black;
             }
-
+            this.SensitivityBar.Value = 30;
+            this.SensitivityValueLabel.Text = "30";
+            this.MouseSmoothBox.SelectedIndex = 0;
+            Program.MyFactory.writeBmInputFile();
             applyKeyButton.Enabled = false;
         }
 

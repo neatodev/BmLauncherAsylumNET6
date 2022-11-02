@@ -17,6 +17,8 @@
     <AssemblyVersion>1.0.0</AssemblyVersion>
     <FileVersion>1.0.0</FileVersion>
     <PackageLicenseExpression>CC BY-NC-SA 4.0</PackageLicenseExpression>
+	<IncludeAllContentForSelfExtract>true</IncludeAllContentForSelfExtract>
+	<Copyright>neatodev</Copyright>
   </PropertyGroup>
 
   <ItemGroup>

@@ -56,7 +56,7 @@ namespace BmLauncherAsylumNET6.ui
             this.rockCred.ForeColor = System.Drawing.SystemColors.InfoText;
             this.rockCred.Location = new System.Drawing.Point(9, 9);
             this.rockCred.Name = "rockCred";
-            this.rockCred.Size = new System.Drawing.Size(186, 13);
+            this.rockCred.Size = new System.Drawing.Size(201, 15);
             this.rockCred.TabIndex = 0;
             this.rockCred.Text = "Game created by Rocksteady Studios";
             this.rockCred.Click += new System.EventHandler(this.rockCred_Click);
@@ -80,7 +80,7 @@ namespace BmLauncherAsylumNET6.ui
             this.writtenLabel.ForeColor = System.Drawing.SystemColors.InfoText;
             this.writtenLabel.Location = new System.Drawing.Point(6, 12);
             this.writtenLabel.Name = "writtenLabel";
-            this.writtenLabel.Size = new System.Drawing.Size(110, 13);
+            this.writtenLabel.Size = new System.Drawing.Size(127, 15);
             this.writtenLabel.TabIndex = 4;
             this.writtenLabel.Text = "Application written by:";
             // 
@@ -90,7 +90,7 @@ namespace BmLauncherAsylumNET6.ui
             this.everLabel.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
             this.everLabel.Location = new System.Drawing.Point(6, 74);
             this.everLabel.Name = "everLabel";
-            this.everLabel.Size = new System.Drawing.Size(74, 13);
+            this.everLabel.Size = new System.Drawing.Size(69, 15);
             this.everLabel.TabIndex = 3;
             this.everLabel.TabStop = true;
             this.everLabel.Text = "EVERGREEN";
@@ -102,7 +102,7 @@ namespace BmLauncherAsylumNET6.ui
             this.gpLabel.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
             this.gpLabel.Location = new System.Drawing.Point(6, 59);
             this.gpLabel.Name = "gpLabel";
-            this.gpLabel.Size = new System.Drawing.Size(46, 13);
+            this.gpLabel.Size = new System.Drawing.Size(50, 15);
             this.gpLabel.TabIndex = 2;
             this.gpLabel.TabStop = true;
             this.gpLabel.Text = "GPUnity";
@@ -114,7 +114,7 @@ namespace BmLauncherAsylumNET6.ui
             this.collabLabel.ForeColor = System.Drawing.SystemColors.InfoText;
             this.collabLabel.Location = new System.Drawing.Point(6, 45);
             this.collabLabel.Name = "collabLabel";
-            this.collabLabel.Size = new System.Drawing.Size(105, 13);
+            this.collabLabel.Size = new System.Drawing.Size(121, 15);
             this.collabLabel.TabIndex = 1;
             this.collabLabel.Text = "In Collaboration with:";
             // 
@@ -125,10 +125,10 @@ namespace BmLauncherAsylumNET6.ui
             this.frofooLabel.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
             this.frofooLabel.Location = new System.Drawing.Point(7, 27);
             this.frofooLabel.Name = "frofooLabel";
-            this.frofooLabel.Size = new System.Drawing.Size(34, 13);
+            this.frofooLabel.Size = new System.Drawing.Size(39, 15);
             this.frofooLabel.TabIndex = 0;
             this.frofooLabel.TabStop = true;
-            this.frofooLabel.Text = "frofoo";
+            this.frofooLabel.Text = "Neato";
             this.frofooLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.frofooLabel_LinkClicked);
             // 
             // groupBox1
@@ -147,7 +147,7 @@ namespace BmLauncherAsylumNET6.ui
             this.linkLabel1.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
             this.linkLabel1.Location = new System.Drawing.Point(45, 11);
             this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(91, 13);
+            this.linkLabel1.Size = new System.Drawing.Size(102, 15);
             this.linkLabel1.TabIndex = 5;
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "Github Repository";
@@ -169,7 +169,7 @@ namespace BmLauncherAsylumNET6.ui
             this.linkLabel2.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
             this.linkLabel2.Location = new System.Drawing.Point(45, 11);
             this.linkLabel2.Name = "linkLabel2";
-            this.linkLabel2.Size = new System.Drawing.Size(90, 13);
+            this.linkLabel2.Size = new System.Drawing.Size(93, 15);
             this.linkLabel2.TabIndex = 5;
             this.linkLabel2.TabStop = true;
             this.linkLabel2.Text = "HD Texture Pack";
@@ -188,7 +188,7 @@ namespace BmLauncherAsylumNET6.ui
             // 
             this.linkLabel3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.linkLabel3.AutoSize = true;
-            this.linkLabel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.linkLabel3.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
             this.linkLabel3.LinkColor = System.Drawing.Color.DarkGoldenrod;
             this.linkLabel3.Location = new System.Drawing.Point(33, 11);
