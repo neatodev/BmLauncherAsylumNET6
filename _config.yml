@@ -11,7 +11,7 @@ sidebar:
     link: https://github.com/neatodev/BmLauncherAsylumNET6
   - name: License
     icon: <i class="fa-solid fa-scale-balanced"></i>
-    link: https://raw.githubusercontent.com/neatodev/BmLauncherAsylumNET6/master/LICENSE
+    link: https://raw.githubusercontent.com/neatodev/BmLauncherAsylumNET6/main/LICENSE
   - name: Nexusmods Page
     icon: <img src="Resources/nexus_icon.ico" height="16" width="16" />
     link: https://www.nexusmods.com/batmanarkhamasylum/mods/117/
