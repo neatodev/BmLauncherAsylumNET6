@@ -246,7 +246,7 @@ namespace BmLauncherAsylumNET6.infrastructure
                     GraphicsInterpreter.checkIntro(confLines[i]);
                 }
 
-                if (i is 663 or >= 1108 and <= 1133)
+                if (i is 663 or (>= 1108 and <= 1133))
                 {
                     GraphicsInterpreter.checkTex(confLines[i]);
                 }
@@ -455,8 +455,8 @@ namespace BmLauncherAsylumNET6.infrastructure
             }
 
             texApplied();
-            if (client.memPoolBox.SelectedIndex != 2 && client.memPoolBox.SelectedIndex != 3 &&
-                client.memPoolBox.SelectedIndex != 4 && client.memPoolBox.SelectedIndex != 5)
+            if (client.memPoolBox.SelectedIndex is not 2 and not 3 and
+                not 4 and not 5)
             {
                 client.memPoolBox.SelectedIndex = 2;
             }
@@ -662,7 +662,7 @@ namespace BmLauncherAsylumNET6.infrastructure
         {
             List<string> gpuList = new();
             string gpu = "";
-            ManagementObjectSearcher search = new ManagementObjectSearcher("SELECT * FROM Win32_VideoController");
+            ManagementObjectSearcher search = new("SELECT * FROM Win32_VideoController");
             foreach (ManagementBaseObject o in search.Get())
             {
                 ManagementObject obj = (ManagementObject)o;
@@ -751,8 +751,10 @@ namespace BmLauncherAsylumNET6.infrastructure
                 logger.Debug("ExecNvSetter - creating NVSetter.exe in working directory.");
             }
 
-            ProcessStartInfo nvProcess = new("NVSetter.exe") { Verb = "runas" };
-            Process.Start(nvProcess);
+            ProcessStartInfo info = new("NVSetter.exe");
+            info.UseShellExecute = true;
+            info.Verb = "runas";
+            Process.Start(info);
             logger.Debug("ExecNvSetter - Executing NVSetter.exe");
         }
     }

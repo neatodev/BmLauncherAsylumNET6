@@ -107,7 +107,7 @@ namespace BmLauncherAsylumNET6.infrastructure
                 aoValue = _prof.GetSetting(KnownSettingId.AmbientOcclusionMode).ToString();
                 compValue = Int16.Parse(_prof.GetSetting(2916165).CurrentValue.ToString());
             }
-            catch (NullReferenceException)
+            catch (Exception)
             {
                 _prof.SetSetting(KnownSettingId.AmbientOcclusionModeActive, 0);
                 _prof.SetSetting(KnownSettingId.AmbientOcclusionMode, 0);

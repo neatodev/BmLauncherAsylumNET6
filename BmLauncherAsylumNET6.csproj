@@ -6,7 +6,22 @@
     <Nullable>enable</Nullable>
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
+    <ApplicationIcon>Resources\favicon.ico</ApplicationIcon>
+    <Authors>Neato</Authors>
+    <Company>neatodev</Company>
+    <Product>Batman: Arkham Asylum Advanced Launcher</Product>
+    <PackageProjectUrl>https://github.com/neatodev/BmLauncherAsylumNET6</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/neatodev/BmLauncherAsylumNET6</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <NeutralLanguage>en</NeutralLanguage>
+    <AssemblyVersion>1.0.0</AssemblyVersion>
+    <FileVersion>1.0.0</FileVersion>
+    <PackageLicenseExpression>CC BY-NC-SA 4.0</PackageLicenseExpression>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="Resources\favicon.ico" />
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="NLog" Version="5.0.5" />
