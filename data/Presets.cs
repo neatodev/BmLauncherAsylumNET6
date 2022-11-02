@@ -1,4 +1,4 @@
-﻿namespace BmLauncherWForm.data
+﻿namespace BmLauncherAsylumNET6.data
 {
     /// <summary>
     ///     Simple Class to store values for the presets.

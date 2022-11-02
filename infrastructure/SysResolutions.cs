@@ -1,10 +1,7 @@
 ﻿using NLog;
-using System.Collections.Generic;
-using System.Linq;
 using System.Runtime.InteropServices;
-using System.Windows.Forms;
 
-namespace BmLauncherWForm.infrastructure
+namespace BmLauncherAsylumNET6.infrastructure
 {
     /// <summary>
     ///     Premade class with slight additions, originally taken off StackOverflow.
@@ -33,8 +30,8 @@ namespace BmLauncherWForm.infrastructure
         /// </summary>
         public void getResolutions()
         {
-            List<string> tempList = new List<string>();
-            DEVMODE vDevMode = new DEVMODE();
+            List<string> tempList = new();
+            DEVMODE vDevMode = new();
             int i = 0;
             while (EnumDisplaySettings(null, i, ref vDevMode))
             {

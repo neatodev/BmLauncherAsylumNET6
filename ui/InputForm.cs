@@ -1,8 +1,4 @@
-﻿using System;
-using System.Drawing;
-using System.Windows.Forms;
-
-namespace BmLauncherWForm.ui
+﻿namespace BmLauncherAsylumNET6.ui
 {
     /// <summary>
     ///     Small class for reading button/mouse input
@@ -134,22 +130,14 @@ namespace BmLauncherWForm.ui
         /// <returns>string with modifier prefix</returns>
         private string setModifiers(string lineToCheck, int thisCase)
         {
-            switch (thisCase)
+            return thisCase switch
             {
-                case 0:
-                    return lineToCheck;
-
-                case 1:
-                    return "S+" + lineToCheck;
-
-                case 2:
-                    return "A+" + lineToCheck;
-
-                case 3:
-                    return "C+" + lineToCheck;
-            }
-
-            return lineToCheck;
+                0 => lineToCheck,
+                1 => "S+" + lineToCheck,
+                2 => "A+" + lineToCheck,
+                3 => "C+" + lineToCheck,
+                _ => lineToCheck,
+            };
         }
 
         /// <summary>

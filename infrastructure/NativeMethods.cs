@@ -1,7 +1,6 @@
-﻿using System;
-using System.Runtime.InteropServices;
+﻿using System.Runtime.InteropServices;
 
-namespace BmLauncherWForm.infrastructure
+namespace BmLauncherAsylumNET6.infrastructure
 {
     /// <summary>
     ///     Wrapper Class for Win32 parameters. Used to ensure only one instance of this Application is active.

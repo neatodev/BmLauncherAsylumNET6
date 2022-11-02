@@ -1,8 +1,7 @@
 ﻿using NLog;
-using System;
 using System.Runtime.InteropServices;
 
-namespace BmLauncherWForm.data
+namespace BmLauncherAsylumNET6.data
 {
     internal static class WineChecker
     {

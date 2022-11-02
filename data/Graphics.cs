@@ -1,4 +1,4 @@
-﻿namespace BmLauncherWForm.data
+﻿namespace BmLauncherAsylumNET6.data
 {
     /// <summary>
     ///     Static class that stores all important parameters that are needed by BmEngine

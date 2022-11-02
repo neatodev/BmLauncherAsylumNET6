@@ -2,9 +2,8 @@
 using NvAPIWrapper;
 using NvAPIWrapper.DRS;
 using NvAPIWrapper.Native.Exceptions;
-using System;
 
-namespace BmLauncherWForm.infrastructure
+namespace BmLauncherAsylumNET6.infrastructure
 {
     /// <summary>
     ///     Worker class utilizing the Nvidia API through NvAPIWrapper.
@@ -108,7 +107,7 @@ namespace BmLauncherWForm.infrastructure
                 aoValue = _prof.GetSetting(KnownSettingId.AmbientOcclusionMode).ToString();
                 compValue = Int16.Parse(_prof.GetSetting(2916165).CurrentValue.ToString());
             }
-            catch (Exception)
+            catch (NullReferenceException)
             {
                 _prof.SetSetting(KnownSettingId.AmbientOcclusionModeActive, 0);
                 _prof.SetSetting(KnownSettingId.AmbientOcclusionMode, 0);

@@ -1,8 +1,6 @@
-﻿using System;
-using System.Diagnostics;
-using System.Windows.Forms;
+﻿using System.Diagnostics;
 
-namespace BmLauncherWForm.ui
+namespace BmLauncherAsylumNET6.ui
 {
     public partial class CreditsWindow : Form
     {
@@ -27,7 +25,7 @@ namespace BmLauncherWForm.ui
 
         private void everLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Random number = new Random();
+            Random number = new();
 
             if ((number.NextDouble() * (100.0 - 1.0)) + 1.0 <= 7.0)
             {

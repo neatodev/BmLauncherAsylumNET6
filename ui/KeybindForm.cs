@@ -1,19 +1,14 @@
-﻿using BmLauncherWForm.data;
-using BmLauncherWForm.infrastructure;
-using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.IO;
-using System.Windows.Forms;
+﻿using BmLauncherAsylumNET6.data;
+using BmLauncherAsylumNET6.infrastructure;
 
-namespace BmLauncherWForm.ui
+namespace BmLauncherAsylumNET6.ui
 {
     /**
      * Keybind editor class that uses buttons as inputreaders.
      */
     public partial class KeybindForm : Form
     {
-        public List<Button> ButtonList = new List<Button>();
+        public List<Button> ButtonList = new();
 
         /**
          * constructor for the KeybindForm that adds all the button to a static list

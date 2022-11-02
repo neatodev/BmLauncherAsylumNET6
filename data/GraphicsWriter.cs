@@ -1,10 +1,8 @@
-﻿using BmLauncherWForm.infrastructure;
+﻿using BmLauncherAsylumNET6.infrastructure;
 using NLog;
 using NvAPIWrapper.Native.Exceptions;
-using System;
-using System.IO;
 
-namespace BmLauncherWForm.data
+namespace BmLauncherAsylumNET6.data
 {
     /// <summary>
     ///     Helper Class for Graphics. Used to change parameters in Graphics class in accordance with user input.

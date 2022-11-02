@@ -1,10 +1,8 @@
-﻿using BmLauncherWForm.infrastructure;
+﻿using BmLauncherAsylumNET6.infrastructure;
 using NLog;
 using NvAPIWrapper.Native.Exceptions;
-using System;
-using System.IO;
 
-namespace BmLauncherWForm.data
+namespace BmLauncherAsylumNET6.data
 {
     /// <summary>
     ///     Graphics helper class. Initializes the GUI with correct values from BmEngine file
@@ -96,32 +94,15 @@ namespace BmLauncherWForm.data
 
         private static void initLang()
         {
-            switch (Graphics.getLanguage())
+            Program.Client.langBox.SelectedIndex = Graphics.getLanguage() switch
             {
-                case "int":
-                    Program.Client.langBox.SelectedIndex = 0;
-                    break;
-
-                case "deu":
-                    Program.Client.langBox.SelectedIndex = 1;
-                    break;
-
-                case "fra":
-                    Program.Client.langBox.SelectedIndex = 2;
-                    break;
-
-                case "ita":
-                    Program.Client.langBox.SelectedIndex = 3;
-                    break;
-
-                case "esn":
-                    Program.Client.langBox.SelectedIndex = 4;
-                    break;
-                default:
-                    Program.Client.langBox.SelectedIndex = Program.Client.langBox.Items.Add("Unofficial");
-                    break;
-            }
-
+                "int" => 0,
+                "deu" => 1,
+                "fra" => 2,
+                "ita" => 3,
+                "esn" => 4,
+                _ => Program.Client.langBox.Items.Add("Unofficial"),
+            };
             logger.Debug("initLang - initialized language as {0}", Graphics.getLanguage());
         }
 

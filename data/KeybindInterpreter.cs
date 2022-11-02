@@ -1,9 +1,7 @@
 ﻿using NLog;
-using System;
 using System.Text.RegularExpressions;
-using System.Windows.Forms;
 
-namespace BmLauncherWForm.data
+namespace BmLauncherAsylumNET6.data
 {
     /// <summary>
     ///     Worker for Keybindform. Acts similarly to GraphicsInterpreter
@@ -393,7 +391,7 @@ namespace BmLauncherWForm.data
         /// <returns>Line with corrected modifiers</returns>
         private static string stringWriter(string lineToCheck, string configLine)
         {
-            TimeSpan time = new TimeSpan(0, 0, 0, 3);
+            TimeSpan time = new(0, 0, 0, 3);
             if (lineToCheck.Length <= 2)
             {
                 return NameConstant + lineToCheck + configLine;

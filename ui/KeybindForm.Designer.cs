@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel;
 using System.Windows.Forms;
 
-namespace BmLauncherWForm.ui
+namespace BmLauncherAsylumNET6.ui
 {
     partial class KeybindForm
     {

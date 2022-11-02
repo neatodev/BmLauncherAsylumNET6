@@ -1,6 +1,6 @@
 ﻿using NLog;
 
-namespace BmLauncherWForm.data
+namespace BmLauncherAsylumNET6.data
 {
     /// <summary>
     ///     Helper class for the static Graphics class

@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel;
 using System.Windows.Forms;
 
-namespace BmLauncherWForm.ui
+namespace BmLauncherAsylumNET6.ui
 {
     partial class BmLauncherForm
     {
@@ -1014,7 +1014,7 @@ namespace BmLauncherWForm.ui
             // 
             this.launchButton.AutoSize = true;
             this.launchButton.BackColor = System.Drawing.Color.Transparent;
-            this.launchButton.BackgroundImage = global::BmLauncherWForm.Properties.Resources.LauncherStart1;
+            this.launchButton.BackgroundImage = global::BmLauncherAsylumNET6.Properties.Resources.LauncherStart1;
             this.launchButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.launchButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.launchButton.ForeColor = System.Drawing.SystemColors.InfoText;

@@ -1,15 +1,11 @@
-﻿using BmLauncherWForm.infrastructure;
-using BmLauncherWForm.ui;
+﻿using BmLauncherAsylumNET6.infrastructure;
+using BmLauncherAsylumNET6.ui;
 using NLog;
 using NLog.Config;
 using NLog.Targets;
-using System;
 using System.Globalization;
-using System.IO;
-using System.Threading;
-using System.Windows.Forms;
 
-namespace BmLauncherWForm
+namespace BmLauncherAsylumNET6
 
 {
     /// <summary>
@@ -33,7 +29,7 @@ namespace BmLauncherWForm
         private static readonly string CurrentTime = DateTime.Now.ToString("dd-MM-yy__hh-mm-ss");
 
         // Mutex with this applications GUID as name
-        private static readonly Mutex Mutex = new Mutex(true, "{cbb275f6-724f-4e82-a403-e333dcf6c0bf}");
+        private static readonly Mutex Mutex = new(true, "{cbb275f6-724f-4e82-a403-e333dcf6c0bf}");
 
         [STAThread]
         private static void Main()
@@ -55,18 +51,18 @@ namespace BmLauncherWForm
 
         private static void SetupLogger()
         {
-            LoggingConfiguration config = new LoggingConfiguration();
-            ConsoleTarget logconsole = new ConsoleTarget("logconsole");
+            LoggingConfiguration config = new();
+            ConsoleTarget logconsole = new("logconsole");
             if (!Directory.Exists("logs"))
             {
                 Directory.CreateDirectory("logs");
             }
 
-            FileTarget logfile = new FileTarget("logfile")
+            FileTarget logfile = new("logfile")
             {
                 FileName = Directory.GetCurrentDirectory() + "\\logs\\bmlauncher_report__" + CurrentTime + ".log"
             };
-            DirectoryInfo logDirectory = new DirectoryInfo(Directory.GetCurrentDirectory() + "\\logs");
+            DirectoryInfo logDirectory = new(Directory.GetCurrentDirectory() + "\\logs");
             DateTime oldestAllowedArchive = DateTime.Now - new TimeSpan(3, 0, 0, 0);
             foreach (FileInfo file in logDirectory.GetFiles())
             {
@@ -83,7 +79,7 @@ namespace BmLauncherWForm
 
         private static void DetectTexmod()
         {
-            DirectoryInfo d = new DirectoryInfo(Directory.GetCurrentDirectory());
+            DirectoryInfo d = new(Directory.GetCurrentDirectory());
             FileInfo[] Files = d.GetFiles("*.exe");
             foreach (FileInfo f in Files)
             {

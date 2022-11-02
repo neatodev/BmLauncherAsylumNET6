@@ -1,12 +1,10 @@
-﻿using BmLauncherWForm.data;
-using BmLauncherWForm.infrastructure;
+﻿using BmLauncherAsylumNET6.data;
+using BmLauncherAsylumNET6.infrastructure;
 using NLog;
-using System;
 using System.Diagnostics;
 using System.Globalization;
-using System.Windows.Forms;
 
-namespace BmLauncherWForm.ui
+namespace BmLauncherAsylumNET6.ui
 {
     public partial class BmLauncherForm : Form
 
@@ -41,7 +39,7 @@ namespace BmLauncherWForm.ui
             }
 
 
-            using (Process launchBmGame = new Process())
+            using (Process launchBmGame = new())
             {
                 try
                 {

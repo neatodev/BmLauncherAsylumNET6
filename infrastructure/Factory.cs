@@ -1,16 +1,11 @@
-﻿using BmLauncherWForm.data;
-using BmLauncherWForm.Properties;
-using BmLauncherWForm.ui;
+﻿using BmLauncherAsylumNET6.data;
+using BmLauncherAsylumNET6.Properties;
+using BmLauncherAsylumNET6.ui;
 using NLog;
-using System;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.Drawing;
-using System.IO;
-using System.Linq;
 using System.Management;
 
-namespace BmLauncherWForm.infrastructure
+namespace BmLauncherAsylumNET6.infrastructure
 {
     /// Factory that read and writes all of the accessed files.
     /// Applies various fixes and executes the NVSetter file if conditions are met.
@@ -47,23 +42,23 @@ namespace BmLauncherWForm.infrastructure
         private static KeybindInterpreter kInterpreter;
 
         // FileInfo used to control the readonly properties of the BmEngine file
-        public static readonly FileInfo ConfigInfo = new FileInfo(ConfigFile);
+        public static readonly FileInfo ConfigInfo = new(ConfigFile);
 
         // FileInfo used to control the readonly properties of the UserEngine file
-        public static readonly FileInfo UserEngineInfo = new FileInfo(UserEngineFile);
+        public static readonly FileInfo UserEngineInfo = new(UserEngineFile);
 
-        public static readonly FileInfo InputFileInfo = new FileInfo(InputFile);
+        public static readonly FileInfo InputFileInfo = new(InputFile);
 
-        public static readonly FileInfo BmInputFileInfo = new FileInfo(BmInputFile);
+        public static readonly FileInfo BmInputFileInfo = new(BmInputFile);
 
         // contains all lines (as strings) of the BmEngine file
-        private static readonly List<string> ConfigList = new List<string>();
+        private static readonly List<string> ConfigList = new();
 
         // contains all lines (as strings) of the UserInput file
-        public static List<string> InputList = new List<string>();
+        public static List<string> InputList = new();
 
         // contains all lines (as strings) of the BMInput file
-        public static List<string> BMInList = new List<string>();
+        public static List<string> BMInList = new();
 
         // prepackaged BmEngine file, used in case file is missing
         private static readonly string BmEnginePremade = Resources.BmEngine;
@@ -101,7 +96,7 @@ namespace BmLauncherWForm.infrastructure
         private GraphicsInterpreter gInterpreter;
 
         // keybind form associated to the factory
-        public KeybindForm Keybinds = new KeybindForm();
+        public KeybindForm Keybinds = new();
 
         // integer used for switch cases by GraphicsInterpreter
         public int LineInt = 21;
@@ -154,21 +149,21 @@ namespace BmLauncherWForm.infrastructure
             logger.Warn("Directory {0} does not exist.", ConfigDirectory);
             Directory.CreateDirectory(ConfigDirectory);
             File.Create(ConfigDirectory + "BmCamera.ini").Dispose();
-            StreamWriter camFile = new StreamWriter(ConfigDirectory + "BmCamera.ini");
+            StreamWriter camFile = new(ConfigDirectory + "BmCamera.ini");
             File.Create(ConfigDirectory + "BmCompat.ini").Dispose();
-            StreamWriter compFile = new StreamWriter(ConfigDirectory + "BmCompat.ini");
+            StreamWriter compFile = new(ConfigDirectory + "BmCompat.ini");
             File.Create(ConfigDirectory + "BmEditor.ini").Dispose();
-            StreamWriter editFile = new StreamWriter(ConfigDirectory + "BmEditor.ini");
+            StreamWriter editFile = new(ConfigDirectory + "BmEditor.ini");
             File.Create(ConfigDirectory + "BmEditorUserSettings.ini").Dispose();
-            StreamWriter editUserFile = new StreamWriter(ConfigDirectory + "BmEditorUserSettings.ini");
+            StreamWriter editUserFile = new(ConfigDirectory + "BmEditorUserSettings.ini");
             File.Create(ConfigDirectory + "BmGame.ini").Dispose();
-            StreamWriter gameFile = new StreamWriter(ConfigDirectory + "BmGame.ini");
+            StreamWriter gameFile = new(ConfigDirectory + "BmGame.ini");
             File.Create(ConfigDirectory + "BmInput.ini").Dispose();
-            StreamWriter fakeInputFile = new StreamWriter(ConfigDirectory + "BmInput.ini");
+            StreamWriter fakeInputFile = new(ConfigDirectory + "BmInput.ini");
             File.Create(ConfigDirectory + "BmUI.ini").Dispose();
-            StreamWriter uiFile = new StreamWriter(ConfigDirectory + "BmUI.ini");
+            StreamWriter uiFile = new(ConfigDirectory + "BmUI.ini");
             File.Create(ConfigDirectory + "UserGame.ini").Dispose();
-            StreamWriter uGameFile = new StreamWriter(ConfigDirectory + "UserGame.ini");
+            StreamWriter uGameFile = new(ConfigDirectory + "UserGame.ini");
             camFile.Write(Resources.BmCamera);
             compFile.Write(Resources.BmCompat);
             editFile.Write(Resources.BmEditor);
@@ -200,7 +195,7 @@ namespace BmLauncherWForm.infrastructure
             {
                 logger.Warn("readConfigFile - BmEngine not found at {0}. Generating it now.", ConfigFile);
                 File.Create(ConfigFile).Dispose();
-                using (StreamWriter file = new StreamWriter(ConfigFile))
+                using (StreamWriter file = new(ConfigFile))
                 {
                     file.Write(BmEnginePremade);
                     logger.Debug("readConfigFile - generated BmEngine at: {0}", ConfigFile);
@@ -211,7 +206,7 @@ namespace BmLauncherWForm.infrastructure
             {
                 logger.Warn("readConfigFile - UserEngine not found at {0}. Generating it now.", UserEngineFile);
                 File.Create(UserEngineFile).Dispose();
-                using (StreamWriter file = new StreamWriter(UserEngineFile))
+                using (StreamWriter file = new(UserEngineFile))
                 {
                     file.Write(UserEnginePremade);
                     logger.Debug("readConfigFile - generated UserEngine at: {0}", UserEngineFile);
@@ -226,14 +221,14 @@ namespace BmLauncherWForm.infrastructure
                 ConfigInfo.IsReadOnly = false;
                 UserEngineInfo.IsReadOnly = false;
                 File.Delete(ConfigFile);
-                using (StreamWriter file = new StreamWriter(ConfigFile))
+                using (StreamWriter file = new(ConfigFile))
                 {
                     file.Write(BmEnginePremade);
                     ConfigInfo.IsReadOnly = true;
                 }
 
                 File.Delete(UserEngineFile);
-                using (StreamWriter file = new StreamWriter(UserEngineFile))
+                using (StreamWriter file = new(UserEngineFile))
                 {
                     file.Write(UserEnginePremade);
                     UserEngineInfo.IsReadOnly = true;
@@ -246,12 +241,12 @@ namespace BmLauncherWForm.infrastructure
             for (int i = 0; i < confLines.Length; i++)
             {
                 ConfigList.Add(confLines[i]);
-                if (i >= 1161 && i <= 1165)
+                if (i is >= 1161 and <= 1165)
                 {
                     GraphicsInterpreter.checkIntro(confLines[i]);
                 }
 
-                if (i == 663 || (i >= 1108 && i <= 1133))
+                if (i is 663 or >= 1108 and <= 1133)
                 {
                     GraphicsInterpreter.checkTex(confLines[i]);
                 }
@@ -278,7 +273,7 @@ namespace BmLauncherWForm.infrastructure
             {
                 logger.Warn("readInputFile - UserInput not found at {0}. Generating it now.", InputFile);
                 File.Create(InputFile).Dispose();
-                using (StreamWriter file = new StreamWriter(InputFile))
+                using (StreamWriter file = new(InputFile))
                 {
                     file.Write(UserInputPremade);
                 }
@@ -294,7 +289,7 @@ namespace BmLauncherWForm.infrastructure
             if (!inputLines.Last().Equals("[Generated by Batman: Arkham Asylum - Advanced Launcher]"))
             {
                 File.Delete(InputFile);
-                using (StreamWriter file = new StreamWriter(InputFile))
+                using (StreamWriter file = new(InputFile))
                 {
                     file.Write(UserInputPremade);
                 }
@@ -324,7 +319,7 @@ namespace BmLauncherWForm.infrastructure
             {
                 logger.Warn("readBMInput - BMInput not found at {0}. Generating it now.", Path.Combine(BmInputFile));
                 File.Create(BmInputFile).Dispose();
-                StreamWriter fakeInputFile = new StreamWriter(BmInputFile);
+                StreamWriter fakeInputFile = new(BmInputFile);
                 fakeInputFile.Write(Resources.BmInput);
                 fakeInputFile.Close();
                 logger.Debug("readBMInput - generated BMInput at: {0}", InputFile);
@@ -354,7 +349,7 @@ namespace BmLauncherWForm.infrastructure
         {
             ConfigInfo.IsReadOnly = false;
             new GraphicsWriter().writeAll();
-            using (StreamWriter file = new StreamWriter(ConfigFile))
+            using (StreamWriter file = new(ConfigFile))
             {
                 for (int i = 0; i < ConfigList.Count; i++)
                 {
@@ -377,7 +372,7 @@ namespace BmLauncherWForm.infrastructure
         public void writeInputFile()
         {
             logger.Debug("writeInputFile - starting interpretKeys writing process.");
-            using (StreamWriter file = new StreamWriter(InputFile))
+            using (StreamWriter file = new(InputFile))
             {
                 for (int i = 0; i < 56; i++)
                 {
@@ -400,7 +395,7 @@ namespace BmLauncherWForm.infrastructure
             BmInputFileInfo.IsReadOnly = false;
 
             logger.Debug("writeBmInputFile - writing BmInput.ini.");
-            using (StreamWriter file = new StreamWriter(BmInputFile))
+            using (StreamWriter file = new(BmInputFile))
             {
                 for (int i = 0; i < BMInList.Count; i++)
                 {
@@ -437,7 +432,7 @@ namespace BmLauncherWForm.infrastructure
         public void SetTexfix()
         {
             ConfigInfo.IsReadOnly = false;
-            using (StreamWriter file = new StreamWriter(ConfigFile))
+            using (StreamWriter file = new(ConfigFile))
             {
                 if (client.texgroupButton.Text == "Enable Texture Pack Fix")
                 {
@@ -550,7 +545,7 @@ namespace BmLauncherWForm.infrastructure
         public void SetIntroFix()
         {
             ConfigInfo.IsReadOnly = false;
-            using (StreamWriter file = new StreamWriter(ConfigFile))
+            using (StreamWriter file = new(ConfigFile))
             {
                 if (client.disableIntroButton.Text == "Disable Intro Movies")
                 {
@@ -665,7 +660,7 @@ namespace BmLauncherWForm.infrastructure
         /// </summary>
         private void setGPUname()
         {
-            List<string> gpuList = new List<string>();
+            List<string> gpuList = new();
             string gpu = "";
             ManagementObjectSearcher search = new ManagementObjectSearcher("SELECT * FROM Win32_VideoController");
             foreach (ManagementBaseObject o in search.Get())
@@ -747,7 +742,7 @@ namespace BmLauncherWForm.infrastructure
             {
                 string exeLocation = Path.Combine(Directory.GetCurrentDirectory(), "NVSetter.exe");
 
-                using (FileStream stream = new FileStream(exeLocation, FileMode.CreateNew, FileAccess.Write))
+                using (FileStream stream = new(exeLocation, FileMode.CreateNew, FileAccess.Write))
                 {
                     byte[] bytes = Resources.NVSetter;
                     stream.Write(bytes, 0, bytes.Length);
@@ -756,7 +751,7 @@ namespace BmLauncherWForm.infrastructure
                 logger.Debug("ExecNvSetter - creating NVSetter.exe in working directory.");
             }
 
-            ProcessStartInfo nvProcess = new ProcessStartInfo("NVSetter.exe") { Verb = "runas" };
+            ProcessStartInfo nvProcess = new("NVSetter.exe") { Verb = "runas" };
             Process.Start(nvProcess);
             logger.Debug("ExecNvSetter - Executing NVSetter.exe");
         }
