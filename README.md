@@ -5,6 +5,7 @@ This is a replacement application for the original BmLauncher of the game. Along
 - Tooltips for every configuration option
 - Option to disable Startup Movies
 - Texmod Autoload Support
+- Option to boot directly into the game, skipping launcher screen
 - Experimental Wine (Linux) Support (More Information at the bottom)
 - Compatibility Fixes for [HD Texture Packs](https://steamcommunity.com/sharedfiles/filedetails/?id=1159691355)
 - NVIDIA API Implementation (Enable HBAO+ using the Launcher!) (Powered by [NvAPIWrapper](https://github.com/falahati/NvAPIWrapper))
@@ -49,6 +50,13 @@ You can just launch your game via Steam or EGS as you normally would, though in 
 To do that, just right-click the application, select Properties and enable the highlighted checkbox as seen in the image below:
 
 ![Unblock Image](https://user-images.githubusercontent.com/49599979/75610370-e2268100-5b10-11ea-978d-c257a2466dc8.png)
+
+Once you're happy with your settings, you can skip the launcher entirely by using the `-nolauncher` launch option.
+
+- On *Steam* you can add this in Properties->Launch options. 
+- On *EGS* you can add this under Settings->Arkham Asylum->Additional Command Line Arguments. 
+- On *GOG GALAXY* Customize->Manage Installation->Configure, enable Launch parameters, select Duplicate. It should be added under Additional executables.
+- If you use a shortcut in Windows, right click->Properties->Shortcut and add it at the end of Target.
 
 ## Hint for Linux users
 
