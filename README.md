@@ -1,8 +1,6 @@
 # Batman: Arkham Asylum - Advanced Launcher
-# OUTDATED
-# [USE THE NEW VERSION INSTEAD](https://neatodev.github.io/AsylumLauncher/)
-
-## NO FURTHER SUPPORT WILL BE PROVIDED FOR THIS VERSION OF THE LAUNCHER!
+# OUTDATED - [USE THE NEW VERSION INSTEAD](https://neatodev.github.io/AsylumLauncher/)
+# NO FURTHER SUPPORT WILL BE PROVIDED FOR THIS VERSION OF THE LAUNCHER!
 
 This is a replacement application for the original BmLauncher of the game. Alongside vastly superior configuration options, this Launcher also offers:
 
