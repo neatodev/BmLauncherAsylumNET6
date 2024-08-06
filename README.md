@@ -1,4 +1,8 @@
 # Batman: Arkham Asylum - Advanced Launcher
+# !OUTDATED!
+# [USE THE NEW VERSION INSTEAD](https://neatodev.github.io/AsylumLauncher/)
+
+## NO FURTHER SUPPORT WILL BE PROVIDED FOR THIS VERSION OF THE LAUNCHER!
 
 This is a replacement application for the original BmLauncher of the game. Alongside vastly superior configuration options, this Launcher also offers:
 
@@ -24,14 +28,6 @@ A standalone, dependency free executable is also available.
 
 ![BMLauncher Preview](https://user-images.githubusercontent.com/49599979/195911308-4c53fa9e-8f6e-49dc-a626-c5cda228498a.png)
 
-## Download
-
-**See: [Current Release](https://github.com/neatodev/BmLauncherAsylumNET6/releases/latest)**
-
-If you enjoy this application, please consider giving a small, one-time donation: 
-
-[![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.com/donate/?hosted_button_id=LG7YTKP4JYN5S)
-
 ## Installation
 
 Drag the contents of the .zip file into the 'Batman Arkham Asylum GOTY\Binaries' folder.
@@ -41,7 +37,6 @@ To find this folder for the *Steam* version, just right-click the game in Steam,
 To find it for the *EGS* version, right-click the game and select "Manage". Then click the folder icon in the "Installation" tab and navigate from there.
 
 For the *GOG* version, click the icon next to the PLAY button and select "Manage installation->Show folder" and navigate from there.
-
 
 ## Usage
 
