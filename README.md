@@ -1,5 +1,5 @@
 # Batman: Arkham Asylum - Advanced Launcher
-# !OUTDATED!
+# OUTDATED
 # [USE THE NEW VERSION INSTEAD](https://neatodev.github.io/AsylumLauncher/)
 
 ## NO FURTHER SUPPORT WILL BE PROVIDED FOR THIS VERSION OF THE LAUNCHER!
