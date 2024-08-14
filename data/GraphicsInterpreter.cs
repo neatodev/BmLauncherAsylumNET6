@@ -40,6 +40,7 @@ namespace BmLauncherAsylumNET6.data
                     {
                         if (Graphics.getLanguage() == "nochange")
                         {
+                            Program.MyFactory.LineInt = 110;
                             return lineToCheck;
                         }
 
